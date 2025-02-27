@@ -1,0 +1,30 @@
+public class DAY4_Q1 {
+
+    // Check if a number is an Armstrong number
+    public static boolean isArmstrong(int number) {
+        int originalNumber = number, sum = 0, digits = String.valueOf(number).length();
+        while (number > 0) {
+            int digit = number % 10;
+            sum += Math.pow(digit, digits);
+            number /= 10;
+        }
+        return sum == originalNumber;
+    }
+
+    // Reverse a given country name
+    public static String reverseCountryName(String country) {
+        return new StringBuilder(country).reverse().toString();
+    }
+
+    // Generate email by appending "@ford.com"
+    public static String generateEmail(String name) {
+        return name.toLowerCase().replaceAll("\\s", "") + "@ford.com";
+    }
+
+    // Main method to test the functions
+    public static void main(String[] args) {
+        System.out.println("Is 153 an Armstrong number? " + isArmstrong(153));
+        System.out.println("Reverse of 'India': " + reverseCountryName("India"));
+        System.out.println("Email for 'John Doe': " + generateEmail("John Doe"));
+    }
+}
